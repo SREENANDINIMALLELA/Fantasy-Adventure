@@ -13,21 +13,21 @@ The task is to model a fantasy adventure. The game will have players, who will h
 	* they will have healing tools with which they can heal other players (potion, herbs, etc).
 	* should be able to change healing tool at any point in the game.
 
-The game will also have rooms to work through. Each room should either have some kind of treasure (Gold, Gems) to collect or an Enemy (Troll, Orc) to defeat before moving on.
+The game will also have rooms to work through. Each room should either have some kind of treasure (Gold, Gems) to collect or an enemy (Troll, Orc) to defeat before moving on.
 
 ## Remember
  * Use TDD
  * Git commit regularly
 
 ## MVP
-1. Create an abstract class `Player`. Each player will have a name and a number of health points.
-2. Create an abstract class for `Enemy`. Each enemy will have a number of health points and a method to take damage.
-3. Create some subclasses of `Enemy` (Troll, Orc).
+1. Create an abstract class `player`. Each player will have a name and a number of health points.
+2. Create an abstract class for `enemy`. Each enemy will have a number of health points and a method to take damage.
+3. Create some subclasses of `enemy` (Troll, Orc).
 4. Create an interface `IWeapon` which has a method `attack`
 5. Create classes which implement the `IWeapon` interface, e.g. Sword, Club, Axe.
 	*	Each of these could have a different damage value, which affects the health of the enemy attacked.
-6. Create an abstract subclass of `Player` called `Fighter`. This should have an `IWeapon` and an attack method.
-7. Create some subclasses of `Fighter` - `Barbarian`, `Dwarf`, `Knight`.
+6. Create an abstract subclass of `player` called `fighter`. This should have an `IWeapon` and an attack method.
+7. Create some subclasses of `fighter` - `Barbarian`, `Dwarf`, `Knight`.
 	 * Each will have a weapon of type `IWeapon`, which they can change as the game goes on i.e. a Dwarf might swap an Axe for a Club.
 	 * Add methods, properties specific to each
 8. Create an interface `ISpell` which has a method `cast`
@@ -36,13 +36,13 @@ The game will also have rooms to work through. Each room should either have some
 10. Create an interface `IDefend` which has a method `defend`
 11. Create classes which implement the `IDefend` interface e.g. Ogre, Dragon
   * Each should have a defend method which affects the health value of the enemy they attack.
-12. Create an abstract subclass of `Player` called `Mage`. This should have an `IDefend` and a method called `defend`.
-13. Create subclasses of `Mage`, e.g. `Warlock` and `Wizard`
+12. Create an abstract subclass of `player` called `mage`. This should have an `IDefend` and a method called `defend`.
+13. Create subclasses of `mage`, e.g. `Warlock` and `Wizard`
 	* Each will have a spell of type `ISpell` and a defender of type `IDefend`, which they can change as the game goes on.
   * `Warlock` and `Wizard` should have `IDefend` instead of `IWeapon`.
-14. Create an interface `IHeal` which has a single method `Heal`
+14. Create an interface `IHeal` which has a single method `heal`
 15. Create classes which implement the `IHeal` interface e.g. Potion, Herbs etc.
-16. Create a `Heal` class. This class will have an `IHeal` with which they can heal other players. This can be changed as the game goes on.
+16. Create a `heal` class. This class will have an `IHeal` with which they can heal other players. This can be changed as the game goes on.
 
 
 ## Extensions
